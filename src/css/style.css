@@ -1,0 +1,60 @@
+body{
+    background-color: aqua;
+    min-height: 100vh;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* background-color: #fff; */
+    border-radius: 10px;
+    height: 50px;
+    min-height: 10vh;
+}
+.menu ul{
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.menu ul li {
+    padding: 10px 40px;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+}
+
+/* Wapper class */
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* min-height: 100vh; */
+}
+
+
+/* today template */
+/* #content{
+    list-style-type:none;
+    padding:0;
+    margin:0
+}
+#content li{
+    padding:8px 16px;
+    border-bottom:1px solid #ddd
+}
+#content li:last-child{
+    border-bottom:none
+}
+.w3-card-4,.w3-hover-shadow:hover{
+    box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)
+}
+#content-0{border:0!important}
+#content{border:1px solid #ccc!important}
+#content-top{border-top:1px solid #ccc!important}
+#content-bottom{border-bottom:1px solid #ccc!important}
+#content-left{border-left:1px solid #ccc!important}
+#content-right{border-right:1px solid #ccc!important} */
+
+
+

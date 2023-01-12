@@ -1,0 +1,33 @@
+
+/* New Task */
+.new-task {
+    width: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    height: 25em;
+}
+.new-task .task-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.new-task .task-info h1 {
+    display: flex;
+    justify-content: center;
+}
+.task-info label {
+    font-size: 20px;
+    font-weight: 100;
+}
+.task-info input {
+    width: 300px;
+}
+.task-info #task-detail {
+    height: 50px;
+}
+.new-task div {
+    line-height: 112vh;
+    text-align: center;
+}

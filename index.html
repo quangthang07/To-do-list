@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>To-do List</title>
+        <link rel="stylesheet" href="./src/css/style.css">
+        <link rel="stylesheet" href="./src/css/upcoming.css">
+        <link rel="stylesheet" href="./src/css/calendar.css">
+        <link rel="stylesheet" href="./src/css/newTask.css">
+        <link rel="stylesheet" href="./src/css/history.css">
+        <script src="https://kit.fontawesome.com/492c2e9b44.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="menu">
+            <ul class="menu-items">
+                <li onclick="displayNewTask()">New Task</li>
+                <li onclick="displayUpcoming()">Upcoming</li>
+                <li onclick="displayCalenda()">Calenda</li>
+                <li onclick="displayHistory()">history</li>
+            </ul>
+        </div>
+        <div class="wrapper">
+            <!-- newtask -->
+            <div class="new-task" style="display: none;">
+                <form class="task-info">
+                    <h1>New Task</h1>
+                    <label for="task-title">Title</label></br>
+                    <input type="text" id="task-title" name="task-title" placeholder="title" required></br>
+                    <label for="task-detail">Details</label></br>
+                    <input type="text" id="task-detail" name="task-detail" placeholder="details infomation"></br>
+                    <label for="task-date">Select day</label></br>
+                    <input type="date" id="task-date" name="task-date" placeholder="xxxx/xx/xx"></br>
+                    <label for="task-time">Time</label></br>
+                    <input type="time" id="task-time" name="task-time" placeholder="00:00"></br>
+                    <label for="task-tag">Tag</label></br>
+                    <input list="task-tag" name="task-tag"></br>
+                    <datalist id="task-tag">
+                        <option value="Red">
+                        <option value="Yellow">
+                        <option value="Green">
+                        <option value="Blue">
+                        <option value="Black">
+                    </datalist>
+                    </br>
+                </form>
+                <div>
+                    <button onclick="addNewTask()">Create</button>
+                </div>
+            </div>
+            <!-- upcoming -->
+            <div class="upcoming">
+                <header>
+                    <h1>Upcoming</h1>
+                    <div class="pages-select-btn">
+                        <span id="prev-page"><a class="fa-solid fa-chevron-left"></a></span>
+                        <span id="page">Page 1</span>
+                        <span id="next-page"><a class="fa-solid fa-chevron-right"></a></span>
+                    </div>
+                </header>
+                <div class="content">
+                    <ul>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+            <!-- calendar -->
+            <div class="calendar" style="display: none;">
+                <header>
+                    <p class="current-date">December 2022</p>
+                    <div class="icons">
+                        <span id="previous"><a class="fa-solid fa-chevron-left"></a></span>
+                        <span id="next"><a class="fa-solid fa-chevron-right"></a></span>
+                    </div>
+                </header>
+                <div class="days-items">
+                    <ul class="weeks">
+                        <li>Sun</li>
+                        <li>Mon</li>
+                        <li>Tue</li>
+                        <li>Wed</li>
+                        <li>Thu</li>
+                        <li>Fri</li>
+                        <li>Sat</li>
+                    </ul>
+                    <ul class="days">
+                    </ul>
+                </div>
+            </div>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                <span class="modal-close-btn">&times;</span>
+                </div>
+            
+            </div>
+            <!-- History -->
+            <div class="history" style="display: none;">
+                <header>
+                    <h1>History</h1>
+                    <div class="history-pages-select-btn">
+                        <span id="history-prev-page"><a class="fa-solid fa-chevron-left"></a></span>
+                        <span id="history-page">Page 1</span>
+                        <span id="history-next-page"><a class="fa-solid fa-chevron-right"></a></span>
+                    </div>
+                </header>
+                <div class="history-content">
+                    <ul>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="./src/js/ncmb.min.js"></script>
+        <script src="./src//js/index.js"></script>
+        <script src="./src/js/upcoming.js" ></script>
+        <script src="./src/js/calendar.js"></script>
+        <script src="./src/js/newTask.js"></script>
+        <script src="./src/js/history.js"></script>
+    </body>
+</html>

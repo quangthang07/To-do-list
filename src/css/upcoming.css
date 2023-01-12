@@ -1,0 +1,56 @@
+/* upcoming */
+.upcoming {
+    width: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    height: 100%;
+}
+.upcoming header {
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+}
+#prev-page, #next-page{
+    margin: 0, 1px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 50%;
+    background: #f2f2f2;
+}
+.content ul{
+    list-style-type:none;
+    padding:0;
+    margin:0;
+}
+.content ul li{
+    padding:8px 16px;
+    border-bottom:1px solid #ddd;
+    font-size: 20px;
+}
+.content ul li:last-child{
+    border-bottom:none
+}
+.content ul .delete-btn {
+    float: right;
+    padding: 5px 10px;
+}
+.content ul .delete-btn:hover {
+    background-color: rgb(232, 44, 44);
+}
+.content ul .delete-btn:active {
+    box-shadow: 0 1px 0 black;
+    margin-top: 2px;
+}
+.content ul .check-btn {
+    float: right;
+    padding: 5px 10px;
+}
+.content ul .check-btn:hover {
+    background-color: rgb(22, 228, 50);
+}
+.content ul .check-btn:active {
+    box-shadow: 0 1px 0 black;
+    margin-top: 2px;
+}
