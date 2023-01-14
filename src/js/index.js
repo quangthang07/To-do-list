@@ -46,8 +46,13 @@ function getData() {
         .fetchAll()
         .then((result) => {
             result.forEach(ele => {
-                if (ele.get("date") >= today && (ele.get("title") !== "" && ele.get("deleted") === false) && !checkExistedElement(todolist,ele) && !checkExistedElement(finishedList,ele)) {
-                    todolist.push(ele);
+                if (ele.get("title") !== "" && ele.get("deleted") === false && !checkExistedElement(todolist,ele) && !checkExistedElement(finishedList,ele)) {
+                    if (ele.get('date') >= today) {
+                        todolist.push(ele);
+                    }else {
+                        ele.isDone = true;
+                        finishedList.push(ele);
+                    }
                 }
             })
             console.log(result);
