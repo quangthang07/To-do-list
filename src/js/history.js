@@ -51,12 +51,12 @@ historyPageSelectBtn.forEach(btn => {
         displayingPageInHistory = btn.id === "history-prev-page" ? displayingPageInHistory-1 : displayingPageInHistory+1;
         if (displayingPageInHistory == -1) {
             displayingPageInHistory = 0;
-        }else if (displayingPageInHistory == Math.floor(todolist.length/3)+1) {
-            displayingPageInHistory = Math.floor(todolist.length/3);
+        }else if (displayingPageInHistory == Math.floor(finishedList.length/3)+1) {
+            displayingPageInHistory = Math.floor(finishedList.length/3);
         }
         document.querySelector("#history-page").innerHTML = `Page ${displayingPageInHistory+1}`;
         console.log(displayingPageInHistory);
-        displayListInHistory(todolist);
+        displayListInHistory(finishedList);
     })
 })
 

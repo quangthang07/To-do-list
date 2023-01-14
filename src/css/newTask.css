@@ -28,6 +28,10 @@
     height: 50px;
 }
 .new-task div {
-    line-height: 112vh;
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* line-height: 112vh; */
     text-align: center;
 }
