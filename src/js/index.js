@@ -8,7 +8,8 @@ const db = new DataBase();
 let todolist = [];
 let finishedList = [];
 let date = new Date();
-const today = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
+let thisMonth = date.getMonth()+1 < 10 ? `0${date.getMonth()+1}` : `${date.getMonth()+1}`;
+const today = `${date.getFullYear()}-${thisMonth}-${date.getDate()}`;
 console.log(today);
 
 const newTaskTemplate = document.querySelector(".new-task")
@@ -45,11 +46,11 @@ function getData() {
         .fetchAll()
         .then((result) => {
             result.forEach(ele => {
-                if (ele.get("date") >= today && (ele.get("title") !== "" && ele.get("deleted") !== true) && !todolist.includes(ele)) {
+                if (ele.get("date") >= today && (ele.get("title") !== "" && ele.get("deleted") === false) && !checkExistedElement(todolist,ele) && !checkExistedElement(finishedList,ele)) {
                     todolist.push(ele);
                 }
             })
-            // console.log(todolist);
+            console.log(result);
             displayList(todolist);
             displayListInHistory(finishedList);
         })
@@ -57,6 +58,7 @@ function getData() {
             console.log("Something went wrong: ",err);
         })
 }
+
 getData();
 function removeData(object){
     db.set("title", object.get("title"));
@@ -77,4 +79,19 @@ function removeData(object){
             console.log(err);
         })
 }
-
+// check existed item in todoList
+function checkExistedElement(array ,element) {
+    for (let ele of array) {
+        if (ele.get('title') === element.get('title')) {
+            console.log(ele.get('detail'));
+            console.log(element.get('detail'));
+            if (ele.get('detail') === element.get('detail')) {
+                if (ele.get('date') === element.get('date')) {
+                    console.log(ele);
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}

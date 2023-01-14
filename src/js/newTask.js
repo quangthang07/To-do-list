@@ -28,8 +28,9 @@ function addNewTask() {
             time.value = "";
             tag.value = "";
             window.alert("Added new task!");
+            getData();
         }
         )
         .catch(console.log);
-    getData();
+    
 }

@@ -9,6 +9,15 @@ console.log(pageSelectBtn);
 function displayList(result) {
     let content= document.querySelector(".content ul");
     content.innerHTML= "";
+    result.sort((a,b) => {
+        if (a.get('date') > b.get('date')) {
+            return 1;
+        }else if (a.get('date') < b.get('date')) {
+            return -1;
+        }else {
+            return 0;
+        }
+    });
     for (let i=0; i<result.length; i++) {
         
         if (Math.floor(i/3) == displayingPage) {
